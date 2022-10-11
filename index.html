@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="indah.css">
+	<title>SPA Menu</title>
+</head>
+<body>
+	<div class="container"> 
+		<nav class="wrapper">
+			<div class="nama">
+				<div class="nama1" onclick="document.location.href='index.html'">Indah Ratna Ningsih</div>
+			</div>
+				<ul class="navigation">
+				<li><a href="#home" class="active">Home</a></li>
+				<li><a href="#about" class="active">About</a></li>
+				<li><a href="#contact"  class="active">Contact</a></li>
+			</ul>
+		</nav>
+		<div id="konten">
+		<div id="isi">
+        <div id="home" class="isi_1">Single Page Application atau SPA adalah aplikasi yang bekerja di dalam browser yang tidak membutuhkan reload page saat digunakan. Dengan kata lain, pengguna  atau user tidak akan berpindah halaman dengan melakukan request kepada server setiap kali terjadi interaksi pada aplikasi.</div>
+        <div id="about" class="isi_2">
+            <img src="foto.jpeg">
+            <p class="nama2">Hello, I'm Indah Ratna Ningsih!</p>
+           <p class="nim">NIM : 41215909</p>
+           <p class="prodi">Prodi : Teknik Informatika</p>
+        </div>
+        <div id="contact" class="isi_3">
+            <p>Silahkan Hubungi Kontak Ini!</p>
+            <p>Terimakasih!</p>
+            <br>
+            <a href="https://wa.me/+6289617812783">Whatsapp</a>
+            <br>
+            <br>
+            <a href="https://instagram.com/indhrtna_">Instagram</a>
+        </div>
+      </div>
+      </div>
+	</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+  var currentSection = 0;
+  $("#konten").hide();
+  $("li a").click(function () {
+    $("li a").removeClass("active");
+    $(this).addClass("active");
+
+    var href = $(this).attr("href");
+    $("#isi>div").hide();
+
+    $(href).show();
+
+    if (currentSection == 0) {
+      $("#konten").slideToggle(200);
+      currentSection = href;
+    } else if (currentSection == href) {
+      $("#konten").slideToggle(200);
+      currentSection = 0;
+    } else {
+      currentSection = href;
+    }
+    return false;
+  });
+});
+</script>
+
+</body>
+</html>
